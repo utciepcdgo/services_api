@@ -11,11 +11,12 @@ return new class extends Migration {
     {
         Schema::create('postal_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('postal_code');
+            $table->integer('postal_code');
             $table->string('settlement_name');
             $table->string('settlement_type');
-            $table->foreignIdFor(Municipality::class)->constrained('municipalities');
-            $table->foreignIdFor(State::class)->constrained('states');
+            $table->string('municipality');
+            $table->string('state');
+            $table->string('city')->nullable();
         });
     }
 

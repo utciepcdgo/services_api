@@ -53,4 +53,10 @@ class PostalCodeController extends Controller
 
         return response()->json();
     }
+
+    public function getByPostalCode($postalCode)
+    {
+        $postal_codes = PostalCode::where('postal_code', $postalCode)->get();
+        return PostalCodeResource::collection($postal_codes);
+    }
 }
