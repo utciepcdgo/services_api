@@ -15,7 +15,6 @@ class MunicipalityResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'state_id' => $this->state_id,
-
             'state' => new StateResource($this->whenLoaded('state')),
         ];
     }

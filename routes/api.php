@@ -15,8 +15,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // States
     Route::get('/states', [StateController::class, 'index']);
     // Municipalities
-    Route::get('/municipalities', [MunicipalityController::class, 'index']);
-    Route::get('/municipalities/{state}', [MunicipalityController::class, 'getByState']);
+//    Route::get('/municipalities', [MunicipalityController::class, 'index']);
+    Route::get('/municipalities', [MunicipalityController::class, 'getByState']);
     // Postal Codes
     Route::get('/postalcodes/{postalcode}', [PostalCodeController::class, 'getByPostalCode']);
 });
